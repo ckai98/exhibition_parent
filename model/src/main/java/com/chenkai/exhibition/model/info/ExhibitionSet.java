@@ -25,6 +25,10 @@ public class ExhibitionSet extends BaseEntity {
     @TableField("exName")
     private String exName;
 
+    @ApiModelProperty(value = "编号")
+    @TableField("exCode")
+    private String exCode;
+
     @ApiModelProperty(value = "地点")
     @TableField("exSite")
     private String exSite;

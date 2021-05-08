@@ -3,6 +3,7 @@ package com.chenkai.exhibition.info.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.chenkai.exhibition.common.exception.ExhibitionException;
 import com.chenkai.exhibition.common.result.Result;
 import com.chenkai.exhibition.info.service.ExhibitionSetService;
 import com.chenkai.exhibition.model.hosp.HospitalSet;
@@ -99,6 +100,12 @@ public class ExhibitionSetController {
     //5 根据ID获取展会信息
     @GetMapping("getExhibitionSet/{id}")
     public Result getExhibitionSet(@PathVariable Long id){
+//        try {
+//            //模拟异常
+//            int a = 1/0;
+//        }catch (Exception e) {
+//            throw new ExhibitionException("失败",201);//返回状态码201
+//        }
         ExhibitionSet exhibitionSet = exhibitionSetService.getById(id);
         return Result.ok(exhibitionSet);
     }

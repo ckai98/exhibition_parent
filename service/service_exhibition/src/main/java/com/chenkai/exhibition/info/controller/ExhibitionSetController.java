@@ -26,6 +26,7 @@ import java.util.List;
 @Api(tags = "展会设置管理")
 @RestController
 @RequestMapping("admin/info/exhibitionSet")
+@CrossOrigin
 public class ExhibitionSetController {
 
     @Autowired

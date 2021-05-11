@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * <p>
  * HospitalSet
@@ -39,11 +41,11 @@ public class ExhibitionSet extends BaseEntity {
 
     @ApiModelProperty(value = "开始时间")
     @TableField("exST")
-    private Data exST;
+    private Date exST;
 
     @ApiModelProperty(value = "结束时间")
     @TableField("exET")
-    private Data exET;
+    private Date exET;
 
     @ApiModelProperty(value = "参展商要求")
     @TableField("exRequire")

@@ -58,7 +58,7 @@ public class ExhibitionSetController {
     }
 
     //3 分页查询展会信息
-    @PostMapping("findPageHospSet/{current}/{limit}")
+    @PostMapping("findPageExhibitionSet/{current}/{limit}")
     public Result findPageExhibitSet(@PathVariable long current,
                                      @PathVariable long limit,
                                      @RequestBody(required = false) ExhibitionSetQueryVo exhibitionSetQueryVo) {
@@ -87,8 +87,7 @@ public class ExhibitionSetController {
 
     //4 添加展会设置
     @PostMapping("saveExhibitionSet")
-    public Result saveExhibitionSet(ExhibitionSet exhibitionSet){
-        //@RequestBody 使用此标签无法成功添加，问题待解决。
+    public Result saveExhibitionSet(@RequestBody ExhibitionSet exhibitionSet){
 
         boolean save = exhibitionSetService.save(exhibitionSet);
         if (save){
@@ -114,8 +113,7 @@ public class ExhibitionSetController {
 
     //6 修改展会设置
     @PostMapping("updateExhibitionSet")
-    public Result updateExhibitionSet(ExhibitionSet exhibitionSet) {
-        //@RequestBody 使用此标签无法成功添加，问题待解决。
+    public Result updateExhibitionSet(@RequestBody ExhibitionSet exhibitionSet) {
         boolean flag = exhibitionSetService.updateById(exhibitionSet);
         if(flag) {
             return Result.ok();

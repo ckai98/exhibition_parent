@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -34,6 +35,7 @@ public class BaseEntity implements Serializable {
     @TableField("isDeleted")
     private Integer isDeleted;
 
+    @JsonIgnore
     @ApiModelProperty(value = "其他参数")
     @TableField(exist = false)
     private Map<String,Object> param = new HashMap<>();
